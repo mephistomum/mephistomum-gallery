@@ -1,0 +1,48 @@
+/* Scrollbar for sidebar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #a27c67;
+  border-radius: 10px;
+}
+
+@keyframes waveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.wave-animated-bg {
+  background: linear-gradient(
+    -45deg,
+    #6e4f3c,   /* dark brown */
+    #a27c67,   /* mid brown */
+    #d2b48c,   /* light tan (transition tone) */
+    #f5f5dc,   /* cream */
+    #d2b48c,   /* light tan (transition tone) */
+    #a27c67,   /* back to mid brown */
+    #6e4f3c    /* back to dark brown */
+  );
+  background-size: 400% 400%;
+  animation: waveBackground 25s ease-in-out infinite;
+}
+
+  .five-star-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
