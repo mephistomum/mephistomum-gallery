@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mephistomum Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+  #popupNotice {
+    position: fixed;
+    inset: 0;
+    z-index: 99999 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  #sidebar {
+    z-index: 20 !important;
+  }
+.lace-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-image: url('assets/images/all.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  z-index: 15; /* 👈 Lower than sidebar's z-20 */
+  pointer-events: none;
+}
+
+</style>
+</head>
+
+
+<body class="flex h-screen overflow-hidden bg-white">
+
+<div class="lace-top"></div>
+
+<div id="sidebarWrapper" class="relative z-20 flex-shrink-0 flex">
+<!-- Pillar image pinned to the right edge of the sidebar -->
+<div class="fixed top-0 left-[176px] z-30 w-[64px] h-screen pointer-events-none">
+  <img src="assets/images/pillar.png" alt="Pillar"
+       class="w-full h-full object-contain" />
+</div>
+
+
+
+
+<!-- Sidebar -->
+ <aside id="sidebar" class="relative wave-animated-bg z-20 w-52 text-white pl-3 pr-7 pt-6 pb-6 space-y-4 overflow-y-auto flex-shrink-0">
+
+<div class="flex flex-col items-center space-y-6">
+  <!-- Last Updated Date -->
+  <div id="lastUpdated" class="text-xs text-white italic">
+    Last updated: July 24, 2025
+  </div>
+
+  <!-- Logo -->
+  <div class="w-60 h-60 rounded-xl overflow-hidden p-0 cursor-default bg-transparent">
+    <img id="logoImage" src="assets/images/logo.png" alt="Logo"
+         class="w-full h-full object-contain"
+         loading="lazy"
+         onerror="this.style.display='none'" />
+  </div>
+</div>
+
+
+  <nav class="flex flex-col w-full space-y-3 text-sm font-semibold tracking-wide">
+    <button class="bg-[#d4bfaf] text-[#7e624a] rounded-full w-full py-2" disabled onclick="changeLogo('logo.png')">ALL</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo6.png')">MC</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo.png')">SYLUS</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo3.png')">ZAYNE</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo5.png')">CALEB</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo4.png')">RAFAYEL</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo2.png')">XAVIER</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo.png')">UNIV</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo.png')">COUPLE</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo6.png')">5-STAR</button>
+
+  </nav>
+  <!-- Envelope Icon Button to Reopen Popup -->
+<div class="pt-6 flex justify-center">
+  <button onclick="showPopup()" class="flex flex-col items-center text-sm hover:underline focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  </button>
+</div>
+<!-- Pillar Border on Right Side -->
+
+
+</aside>
+</div>
+  <!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-y-auto relative z-10">
+<button
+  id="toggleSidebar"
+  class="fixed top-20 left-56 z-50 bg-[#a27c67] text-white px-3 py-1 rounded md:hidden shadow-lg transition-all duration-300"
+>
+  ☰
+</button>
+
+
+<h1 id="galleryTitle" class="mt-24 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-serif font-bold mb-10 select-none" style="color:#4b372a;">
+  ALL TEMPLATES
+</h1>
+
+
+
+  <section id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8 ml-4">
+
+    <!-- JS will populate this -->
+  </section>
+
+
+
+
+  <!-- ✅ Move footer here so it shows after scrolling -->
+  <footer>
+    <div class="social-icons" aria-label="Social media links">
+      <a href="https://x.com/mephistomum" aria-label="Twitter" target="_blank" rel="noopener" class="social-icon twitter" role="link">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.tiktok.com/@mephistomum?_t=ZS-8y16ezVy7xn&_r=1" aria-label="TikTok" target="_blank" rel="noopener" class="social-icon tiktok" role="link">
+        <i class="fab fa-tiktok" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.xiaohongshu.com/user/profile/6846c056000000001d01692b?xsec_token=YBg7WGpJ7udGqqOVYseXoNJawQKrxdMHXSESoFKQ2sw9M=&xsec_source=app_share&xhsshare=CopyLink&appuid=6846c056000000001d01692b&apptime=1752484209&share_id=428020edc61141b7b6f2f5b4ab641665" aria-label="YouTube" target="_blank" rel="noopener" class="social-icon youtube" role="link">
+        <i class="fab fa-yt" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="copyright-text" aria-label="Copyright information">
+      &copy; 2025 All rights reserved
+    </div>
+    <div class="username" aria-label="Username">
+      mephistomum
+    </div>
+  </footer>
+</main>
+
+<!-- Popup Notice -->
+<div id="popupNotice" class="fixed inset-0 z-[99999] bg-black bg-opacity-50 flex items-center justify-center pointer-events-auto">
+  <div class="bg-white rounded-xl shadow-xl max-w-lg p-6 relative text-left w-[90%] sm:w-auto">
+    <button id="closePopup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xl font-bold">&times;</button>
+    
+    <h2 class="text-2xl font-bold mb-2 text-[#4b372a] text-center">🐦‍⬛ Welcome to Mephistomum Gallery!</h2>
+    <p class="text-sm text-gray-700 text-center mb-4">Please read the following important notes before exploring:</p>
+    
+    <ul class="list-disc list-inside text-sm text-gray-700 space-y-2">
+      <li> Just hold/touch the photo to save the QRs.</li>
+      <li><strong>Strictly</strong> you cannot regenerate my QRs.</li>
+      <li>You are <strong>not allowed</strong> to post any of my QRs on another platform.</li>
+      <li>When using my QRs, <strong>please qrt/reply to the origin post</strong></li>
+      <p class="text-sm text-gray-700 ml-5">(click the “View on X” button under the QR).</p>
+      <li>I would appreciate it if you include <strong>this page link</strong></li>
+      <p class="text-sm text-gray-700 ml-5">when sharing your photos.</p>
+    </ul>
+
+    <p class="mt-4 text-sm text-gray-600 italic text-center">I love you and thank you! Feel free to visit this page anytime &lt;3</p>
+  </div>
+</div>
+
+    <canvas
+  id="sakuraCanvas"
+  style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+         pointer-events: none; z-index: 0;"></canvas>
+
+
+<script>
+  // Automatically hide sidebar when popup is active (on load)
+  window.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("popupNotice");
+    const sidebar = document.getElementById("sidebar");
+
+    // Force sidebar below popup
+    if (popup && sidebar) {
+      sidebar.style.zIndex = "10";
+      popup.style.zIndex = "99999"; // higher than everything
+    }
+  });
+
+  // Close popup and restore sidebar
+  document.getElementById("closePopup").addEventListener("click", function () {
+    document.getElementById("popupNotice").style.display = "none";
+  });
+</script>
+
+<script>
+  // Close popup when "X" is clicked
+  document.getElementById("closePopup").addEventListener("click", function () {
+    document.getElementById("popupNotice").style.display = "none";
+  });
+</script>
+
+<!-- change logo name -->
+         <script>
+  function changeLogo(filename) {
+    const logoImage = document.getElementById('logoImage');
+    logoImage.src = `assets/images/${filename}`;
+  }
+</script>
+
+<script src="sakura.js"></script>
+
+  <script src="images.js"></script>
+<script>
+ const toggleBtn = document.getElementById("toggleSidebar");
+const sidebarWrapper = document.getElementById("sidebarWrapper");
+
+toggleBtn.addEventListener("click", () => {
+  sidebarWrapper.classList.toggle("hidden");
+
+  const isHidden = sidebarWrapper.classList.contains("hidden");
+
+  if (isHidden) {
+    toggleBtn.classList.remove("left-56");
+    toggleBtn.classList.add("left-4");
+  } else {
+    toggleBtn.classList.remove("left-4");
+    toggleBtn.classList.add("left-56");
+  }
+});
+
+</script>
+<script>
+  function showPopup() {
+    const popup = document.getElementById("popupNotice");
+    if (popup) {
+      popup.style.display = "flex"; // make it visible again
+    }
+  }
+</script>
+
+</body>
+
+</html>
