@@ -185,7 +185,7 @@ const imageList = [
   { filename: "ZAYNE5_UNIV6.jpg", twitterLink: "https://x.com/mephistomum/status/1920064491339034955" },
   { filename: "ZAYNE6.jpg", twitterLink: "https://x.com/mephistomum/status/1924597497789612506" },
   { filename: "ZAYNE7_UNIV7.jpg", twitterLink: "https://x.com/mephistomum/status/1931540767702655191" },
-  { filename: "ZAYNE8_UNIV8.jpg", twitterLink: "https://x.com/mephistomum/status/1945655814469062761" },
+  { filename: "ZAYNE8_UNIV8.jpg", twitterLink: "https://x.com/mephistomum/status/1945655814469062761", isTall : false},
     { filename: "RAFAYEL13.jpg", twitterLink: "https://x.com/mephistomum/status/1945655814469062761", isTall : true },
   { filename: "5-STAR1.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
 { filename: "5-STAR2.jpg", twitterLink: "https://x.com/mephistomum/status/1934831272028938720", hiddenInAll: true },
@@ -220,10 +220,13 @@ function renderGallery(filter = "ALL") {
     const article = document.createElement("article");
     article.className = "flex flex-col border border-gray-300 rounded shadow-sm overflow-hidden bg-white";
 
-    // Apply a custom height for tall images
- const imageClass = isTall 
-  ? "object-cover h-[60vh] object-top" 
-  : "object-cover h-full";
+const imageClass = isTall 
+  ? "object-cover aspect-[3/4] h-[10%] sm:h-[100%] md:h-[100%] lg:h-[100%] object-top" 
+  : "object-cover aspect-[3/4] h-full";
+
+
+
+
 
 
 
