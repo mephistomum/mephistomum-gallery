@@ -186,6 +186,7 @@ const imageList = [
   { filename: "ZAYNE6.jpg", twitterLink: "https://x.com/mephistomum/status/1924597497789612506" },
   { filename: "ZAYNE7_UNIV7.jpg", twitterLink: "https://x.com/mephistomum/status/1931540767702655191" },
   { filename: "ZAYNE8_UNIV8.jpg", twitterLink: "https://x.com/mephistomum/status/1945655814469062761" },
+    { filename: "RAFAYEL13.jpg", twitterLink: "https://x.com/mephistomum/status/1945655814469062761", isTall : true },
   { filename: "5-STAR1.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
 { filename: "5-STAR2.jpg", twitterLink: "https://x.com/mephistomum/status/1934831272028938720", hiddenInAll: true },
   { filename: "5-STAR3.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
@@ -207,40 +208,49 @@ function renderGallery(filter = "ALL") {
     return upperFilename.startsWith(filter);
   });
 
-filtered.forEach(image => {
-  const imageURL = `https://mephistomum.github.io/mephistomum-gallery/assets/images/${image.filename}`;
-  const altText = image.filename.replace(/\.[^/.]+$/, "").replace(/_/g, " ");
-  const twitterLink = image.twitterLink;
+  filtered.forEach(image => {
+    const imageURL = `https://mephistomum.github.io/mephistomum-gallery/assets/images/${image.filename}`;
+    const altText = image.filename.replace(/\.[^/.]+$/, "").replace(/_/g, " ");
+    const twitterLink = image.twitterLink;
 
-  // ✅ Add condition to detect 5-STAR images
-  const isFiveStar = image.filename.toUpperCase().startsWith("5-STAR");
+    // ✅ Add condition to detect 5-STAR images
+    const isFiveStar = image.filename.toUpperCase().startsWith("5-STAR");
+    const isTall = image.isTall;  // Check if the image is tall
 
-  const article = document.createElement("article");
-  article.className = "flex flex-col border border-gray-300 rounded shadow-sm overflow-hidden bg-white";
+    const article = document.createElement("article");
+    article.className = "flex flex-col border border-gray-300 rounded shadow-sm overflow-hidden bg-white";
 
-  article.innerHTML = `
-    <div class="relative w-full ${isFiveStar ? "aspect-[3/3]" : "aspect-[3/4]"} bg-gray-100">
-      <a href="${imageURL}" download>
-        <img src="${imageURL}" alt="${altText}" 
-             class="w-full h-full object-cover ${isFiveStar ? "scale-90" : ""}" 
-             loading="lazy" 
-             onerror="this.style.display='none'" />
-      </a>
-    </div>
-    ${
-      twitterLink
-        ? `<a href="${twitterLink}" target="_blank" rel="noopener" 
-              class="mt-2 mx-auto mb-4 text-center bg-[#a27c67] text-white px-4 py-1 rounded-full w-31 hover:bg-[#8d6d57] transition text-sm">
-              View on X
-           </a>`
-        : ""
-    }
-  `;
+    // Apply a custom height for tall images
+ const imageClass = isTall 
+  ? "object-cover h-[60vh] object-top" 
+  : "object-cover h-full";
 
-  gallery.appendChild(article);
-});
 
+
+
+    article.innerHTML = `
+      <div class="relative w-full ${isFiveStar ? "aspect-[3/3]" : "aspect-[3/4]"} bg-gray-100">
+        <a href="${imageURL}" download>
+          <img src="${imageURL}" alt="${altText}" 
+               class="w-full ${imageClass} ${isFiveStar ? "scale-90" : ""}" 
+               loading="lazy" 
+               onerror="this.style.display='none'" />
+        </a>
+      </div>
+      ${
+        twitterLink
+          ? `<a href="${twitterLink}" target="_blank" rel="noopener" 
+                class="mt-2 mx-auto mb-4 text-center bg-[#a27c67] text-white px-4 py-1 rounded-full w-31 hover:bg-[#8d6d57] transition text-sm">
+                View on X
+             </a>`
+          : ""
+      }
+    `;
+
+    gallery.appendChild(article);
+  });
 }
+
 
 document.querySelectorAll("nav button").forEach(button => {
   button.addEventListener("click", () => {
