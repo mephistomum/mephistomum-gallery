@@ -33,6 +33,17 @@
   z-index: 15; /* 👈 Lower than sidebar's z-20 */
   pointer-events: none;
 }
+.collaborators a {
+  font-style: italic;
+  font-weight: bold;
+  color: rgba(141, 99, 36, 0.432);
+  margin-right: 10px; /* Gap between names */
+}
+
+.collaborators a:last-child {
+  margin-right: 0; /* Removes gap after the last name */
+}
+
 
 </style>
 </head>
@@ -122,25 +133,33 @@
 
 
   <!-- ✅ Move footer here so it shows after scrolling -->
-  <footer>
-    <div class="social-icons" aria-label="Social media links">
-      <a href="https://x.com/mephistomum" aria-label="Twitter" target="_blank" rel="noopener" class="social-icon twitter" role="link">
-        <i class="fab fa-twitter" aria-hidden="true"></i>
-      </a>
-      <a href="https://www.tiktok.com/@mephistomum?_t=ZS-8y16ezVy7xn&_r=1" aria-label="TikTok" target="_blank" rel="noopener" class="social-icon tiktok" role="link">
-        <i class="fab fa-tiktok" aria-hidden="true"></i>
-      </a>
-      <a href="https://www.xiaohongshu.com/user/profile/6846c056000000001d01692b?xsec_token=YBg7WGpJ7udGqqOVYseXoNJawQKrxdMHXSESoFKQ2sw9M=&xsec_source=app_share&xhsshare=CopyLink&appuid=6846c056000000001d01692b&apptime=1752484209&share_id=428020edc61141b7b6f2f5b4ab641665" aria-label="YouTube" target="_blank" rel="noopener" class="social-icon youtube" role="link">
-        <i class="fab fa-yt" aria-hidden="true"></i>
-      </a>
-    </div>
-    <div class="copyright-text" aria-label="Copyright information">
-      &copy; 2025 All rights reserved
-    </div>
-    <div class="username" aria-label="Username">
-      mephistomum
-    </div>
-  </footer>
+<footer>
+  <div class="social-icons" aria-label="Social media links">
+    <a href="https://x.com/mephistomum" aria-label="Twitter" target="_blank" rel="noopener" class="social-icon twitter" role="link">
+      <i class="fab fa-twitter" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.tiktok.com/@mephistomum?_t=ZS-8y16ezVy7xn&_r=1" aria-label="TikTok" target="_blank" rel="noopener" class="social-icon tiktok" role="link">
+      <i class="fab fa-tiktok" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.xiaohongshu.com/user/profile/6846c056000000001d01692b?xsec_token=YBg7WGpJ7udGqqOVYseXoNJawQKrxdMHXSESoFKQ2sw9M=&xsec_source=app_share&xhsshare=CopyLink&appuid=6846c056000000001d01692b&apptime=1752484209&share_id=428020edc61141b7b6f2f5b4ab641665" aria-label="YouTube" target="_blank" rel="noopener" class="social-icon youtube" role="link">
+      <i class="fab fa-yt" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div class="copyright-text" aria-label="Copyright information">
+    &copy; 2025 All rights reserved
+  </div>
+  <div class="username" aria-label="Username">
+    mephistomum
+  </div>
+  <!-- Collaborator usernames -->
+  <div class="collaborators" aria-label="Collaborators">
+    <!-- <span>Collaborators: </span> -->
+    <a href="https://x.com/VoidHotaru" target="_blank" rel="noopener">VoidHotaru</a>
+    <a href="https://x.com/elyitian" target="_blank" rel="noopener">elyitian</a>
+    <a href="https://x.com/fayelspearl" target="_blank" rel="noopener">fayelspearl</a>
+    <a href="https://x.com/serntzyne" target="_blank" rel="noopener">serntzyne</a>
+  </div>
+</footer>
 </main>
 
 <!-- Popup Notice -->
