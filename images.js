@@ -187,6 +187,7 @@ const imageList = [
   { filename: "ZAYNE7_UNIV7.jpg", twitterLink: "https://x.com/mephistomum/status/1931540767702655191" },
   { filename: "ZAYNE8_UNIV8.jpg", twitterLink: "https://x.com/mephistomum/status/1945655814469062761", isTall : false},
     { filename: "RAFAYEL13.jpg", twitterLink: "https://x.com/VoidHotaru/status/1947391700261081540", isTall : true },
+     { filename: "ZAYNE11.jpg", twitterLink: "https://x.com/elyitian/status/1942020339510153461", isTall : true },
   { filename: "5-STAR1.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
 { filename: "5-STAR2.jpg", twitterLink: "https://x.com/mephistomum/status/1934831272028938720", hiddenInAll: true },
   { filename: "5-STAR3.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
