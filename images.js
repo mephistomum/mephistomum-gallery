@@ -221,7 +221,7 @@ function renderGallery(filter = "ALL") {
     article.className = "flex flex-col border border-gray-300 rounded shadow-sm overflow-hidden bg-white";
 
 const imageClass = isTall 
-  ? "object-cover aspect-[3/4] h-[10%] sm:h-[100%] md:h-[100%] lg:h-[100%] object-top" 
+  ? "object-cover aspect-[3/4] h-[100%] sm:h-[100%] md:h-[100%] lg:h-[100%] object-top" 
   : "object-cover aspect-[3/4] h-full";
 
 
