@@ -7,7 +7,7 @@ const imageList = [
    { filename: "SYLUS78.jpg", twitterLink: "https://x.com/mephistomum/status/1946742382411878756" },
   { filename: "SYLUS77.jpg", twitterLink: "https://x.com/mephistomum/status/1946508489859473424" },
   { filename: "SYLUS76.jpg", twitterLink: "https://x.com/mephistomum/status/1946025270324142487" },
-  { filename: "SYLUS87.PNG", twitterLink: "https://x.com/mephistomum/status/1955263840184053768" },
+  { filename: "SYLUS87.png", twitterLink: "https://x.com/mephistomum/status/1955263840184053768" },
    { filename: "MC12.jpg", twitterLink: "https://x.com/mephistomum/status/1943170388886003954" },
   { filename: "MC9.jpg", twitterLink: "https://x.com/mephistomum/status/1941503185488855320" },
   { filename: "MC10.jpg", twitterLink: "https://x.com/mephistomum/status/1943287348952994063" },
