@@ -69,7 +69,7 @@
 <div class="flex flex-col items-center space-y-6">
   <!-- Last Updated Date -->
   <div id="lastUpdated" class="text-xs text-white italic">
-    Last updated: August 16, 2025
+    Last updated: August 17, 2025
   </div>
 
   <!-- Logo -->
@@ -118,10 +118,38 @@
   ☰
 </button>
 
+<div class="relative flex items-center justify-center mt-24 mb-10 px-8">
+  <!-- Title -->
+  <h1 id="galleryTitle" 
+      class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif font-bold select-none text-center"
+      style="color:#4b372a;">
+    ALL TEMPLATES
+  </h1>
 
-<h1 id="galleryTitle" class="mt-24 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-serif font-bold mb-10 select-none" style="color:#4b372a;">
-  ALL TEMPLATES
-</h1>
+<!-- Filter Dropdown -->
+<div class="absolute right-8">
+  <button id="filterToggle" class="flex items-center gap-2 px-3 py-2 bg-gray-200 rounded-md shadow hover:bg-gray-300">
+    <span id="filterLabel">Filter</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.184l3.71-3.954a.75.75 0 111.08 1.04l-4.24 4.516a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+    </svg>
+  </button>
+
+  <div id="filterMenu" 
+       class="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50">
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="ALL">ALL</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="SUMMER">SUMMER</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="WEDDING">WEDDING</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="SPRING">SPRING</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="QUEEN">QUEEN</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="SPICY">SPICY</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="CUTE">CUTE</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="MERMAID">MERMAID</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="OTHER">OTHER</button>
+  </div>
+</div>
+
+</div>
 
 
 
@@ -162,6 +190,7 @@
     <a href="https://x.com/serntzyne" target="_blank" rel="noopener">serntzyne</a>
     <a href="https://x.com/applesav1or" target="_blank" rel="noopener">applesav1or</a>
     <a href="https://x.com/ZaynesBlosm" target="_blank" rel="noopener">ZaynesBlosm</a>
+    <a href="https://x.com/farahsylove" target="_blank" rel="noopener">farahsylove</a>
   </div>
 </footer>
 </main>
@@ -260,6 +289,59 @@ toggleBtn.addEventListener("click", () => {
     }
   }
 </script>
+<script>
+// Elements
+const filterToggle = document.getElementById("filterToggle");
+const filterMenu = document.getElementById("filterMenu");
+const filterLabel = filterToggle.querySelector("span");
+
+// Toggle dropdown
+filterToggle.addEventListener("click", (e) => {
+  e.stopPropagation(); // prevent immediate close
+  filterMenu.classList.toggle("hidden");
+});
+
+// Close dropdown if clicked outside
+document.addEventListener("click", (event) => {
+  if (!filterToggle.contains(event.target) && !filterMenu.contains(event.target)) {
+    filterMenu.classList.add("hidden");
+  }
+});
+
+// Handle filter option click
+filterMenu.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const category = btn.getAttribute("data-category").toUpperCase();
+
+    // Update label + save filter
+    filterLabel.textContent = category;
+    currentSubFilter = category;
+
+    // Render
+    renderGallery(currentMainFilter, currentSubFilter);
+
+    filterMenu.classList.add("hidden"); // close dropdown
+  });
+});
+
+// ✅ Select all nav items (links, buttons, spans inside nav)
+document.querySelectorAll("nav a, nav button, nav li, nav div").forEach(navItem => {
+  navItem.addEventListener("click", (e) => {
+    // If it's an SPA, keep preventDefault. If real links, remove it.
+    e.preventDefault();  
+
+    // Reset label and filter state
+    filterLabel.textContent = "Filter"; 
+    currentSubFilter = "ALL";  
+
+    // Re-render with reset
+    renderGallery(currentMainFilter, currentSubFilter);
+  });
+});
+
+
+</script>
+
 
 </body>
 
