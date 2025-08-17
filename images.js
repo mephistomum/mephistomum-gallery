@@ -69,7 +69,7 @@ const imageList = [
   { filename: "RAFAYEL2_UNIV2.jpg", categories: ["CUTE","WEDDING"], twitterLink: "https://x.com/mephistomum/status/1943630155249009008" },
   { filename: "SYLUS91.PNG", categories: ["SPICY","SUMMER"], twitterLink: "https://x.com/mephistomum/status/1955452195010453585" },
   { filename: "SYLUS93.PNG", categories: ["SPICY","SUMMER"], twitterLink: "https://x.com/mephistomum/status/1955973156134641775" },
-  { filename: "SYLUS96.PNG", categories: ["SPICY","SUMMER"], twitterLink: "https://x.com/mephistomum/status/1956891822653124959" },
+  { filename: "SYLUS96.jpg", categories: ["SPICY","SUMMER"], twitterLink: "https://x.com/mephistomum/status/1956891822653124959" },
   { filename: "SYLUS94.jpg", categories: ["SUMMER"],twitterLink: "https://x.com/mephistomum/status/1956181646199210185" },
   { filename: "SYLUS95.jpg", categories: ["SUMMER"], twitterLink: "https://x.com/mephistomum/status/1956709441501278302" },
   { filename: "SYLUS90.PNG", categories: ["OTHER", "WEDDING"], twitterLink: "https://x.com/mephistomum/status/1955443180679426553" },
