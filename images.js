@@ -1,4 +1,20 @@
 
+// Define which filters are allowed per main filter
+const filterOptionsMap = {
+  ALL: ["ALL", "SUMMER", "WEDDING", "SPRING", "QUEEN", "SPICY", "CUTE", "MERMAID", "OTHER"],
+  MC: ["ALL", "SUMMER", "WEDDING", "SPRING", "QUEEN", "SPICY", "CUTE", "MERMAID", "OTHER"], // only show these when MC is selected
+  SYLUS: ["ALL", "SUMMER", "WEDDING", "SPRING", "SPICY", "CUTE",  "OTHER"], 
+  ZAYNE: ["ALL", "SUMMER", "WEDDING", "SPRING", "SPICY", "CUTE",  "OTHER"], 
+  CALEB: ["ALL", "SUMMER", "WEDDING", "SPRING",  "SPICY", "CUTE",  "OTHER"], 
+  RAFAYEL: ["ALL", "SUMMER", "WEDDING", "SPRING",  "SPICY", "CUTE", "MERMAID", "OTHER"], 
+  XAVIER: ["ALL", "SUMMER", "WEDDING", "SPRING", "QUEEN", "SPICY", "CUTE",  "OTHER"], 
+  UNIV: [], 
+  COUPLE: [], 
+  "5-STAR": [], 
+};
+
+
+
 const imageList = [
   { filename: "SYLUS1.jpg", categories: ["WEDDING"],  twitterLink: "https://x.com/mephistomum/status/1940802154585116787" },
   { filename: "SYLUS2.jpg", categories: ["WEDDING"],twitterLink: "https://x.com/mephistomum/status/1941132096090898597" },
@@ -325,23 +341,45 @@ document.querySelectorAll("nav button").forEach(button => {
     currentMainFilter = category;
     currentSubFilter = "ALL"; // reset sub filter
 
-    // ✅ Update image gallery
+    // ✅ Re-render gallery
     renderGallery(currentMainFilter, currentSubFilter);
 
-    // ✅ Update title text
+    // ✅ Update title
     const titleElement = document.getElementById("galleryTitle");
     titleElement.textContent = `${category} TEMPLATES`;
 
-    // ✅ Update active button styles
+    // ✅ Update active styles
     document.querySelectorAll("nav button").forEach(btn => {
       btn.classList.remove("bg-[#d4bfaf]", "text-[#7e624a]");
       btn.removeAttribute("disabled");
     });
-
     button.classList.add("bg-[#d4bfaf]", "text-[#7e624a]");
     button.setAttribute("disabled", true);
+
+    // ✅ Rebuild filter menu based on allowed options
+    const filterMenu = document.getElementById("filterMenu");
+    filterMenu.innerHTML = ""; // clear
+    (filterOptionsMap[category] || filterOptionsMap.ALL).forEach(opt => {
+      const btn = document.createElement("button");
+      btn.textContent = opt.charAt(0).toUpperCase() + opt.slice(1).toLowerCase();
+      btn.className = "block w-full text-left px-4 py-2 hover:bg-gray-100";
+      btn.setAttribute("data-category", opt);
+      filterMenu.appendChild(btn);
+
+      // ✅ Re-attach filter click handler
+      btn.addEventListener("click", () => {
+        filterLabel.textContent = btn.textContent;
+        currentSubFilter = opt;
+        renderGallery(currentMainFilter, currentSubFilter);
+        filterMenu.classList.add("hidden");
+      });
+    });
+
+    // ✅ Reset filter label back to "Filter"
+    filterLabel.textContent = "Filter";
   });
 });
+
 
 
 // Initial render

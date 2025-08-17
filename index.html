@@ -345,6 +345,10 @@ filterMenu.querySelectorAll("button").forEach(btn => {
 // ✅ Select all nav items (links, buttons, spans inside nav)
 document.querySelectorAll("nav a, nav button, nav li, nav div").forEach(navItem => {
   navItem.addEventListener("click", (e) => {
+        if (navItem.tagName === "A") {
+      // ✅ Let Yearbook link work normally
+      return;
+    }
     // If it's an SPA, keep preventDefault. If real links, remove it.
     e.preventDefault();  
 
