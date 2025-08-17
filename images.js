@@ -29,6 +29,8 @@ const imageList = [
      { filename: "MC72.jpg", categories: ["SUMMER"], twitterLink: "https://x.com/mephistomum/status/1956264684908371995" },
       { filename: "MC73.jpg", categories: ["SUMMER"], twitterLink: "https://x.com/mephistomum/status/1956266667904000466" },
       { filename: "MC75.jpg", categories: ["SUMMER"], twitterLink: "https://x.com/farahsylove/status/1956613349103554892" },
+       { filename: "MC76.jpg", categories: ["SUMMER"], twitterLink: "https://x.com/farahsylove/status/1954875509210599865" },
+        { filename: "MC77.jpg", categories: ["SUMMER"], twitterLink: "https://x.com/farahsylove/status/1956613349103554892" },
        { filename: "MC74.jpg", categories: ["OTHER"], twitterLink: "https://x.com/mephistomum/status/1956682927716413773" },
   { filename: "MC57.jpg", categories: ["WEDDING"], twitterLink: "https://x.com/mephistomum/status/1948592037135352102" },
     { filename: "MC58.jpg", categories: ["WEDDING"], twitterLink: "https://x.com/mephistomum/status/1948705619386495330" },

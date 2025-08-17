@@ -7,6 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
   #popupNotice {
     position: fixed;
@@ -128,26 +130,40 @@
 
 <!-- Filter Dropdown -->
 <div class="absolute right-8">
-  <button id="filterToggle" class="flex items-center gap-2 px-3 py-2 bg-gray-200 rounded-md shadow hover:bg-gray-300">
-    <span id="filterLabel">Filter</span>
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.184l3.71-3.954a.75.75 0 111.08 1.04l-4.24 4.516a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-    </svg>
-  </button>
+<button id="filterToggle" 
+        class="flex items-center gap-2 px-3 py-2 bg-gray-200 rounded-md shadow hover:bg-gray-300"
+        style="font-family: 'Tangerine', cursive; font-size: 1.6rem; font-weight: 700;">
+  
+  <!-- Text only visible on sm+ screens -->
+  <span id="filterLabel" class="hidden sm:inline">Filter</span>
+
+  <!-- Funnel Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       viewBox="0 0 24 24" fill="currentColor" 
+       class="h-5 w-5">
+    <path fill-rule="evenodd" 
+          d="M3 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 01.53 1.28l-6.97 7.47v5.25a.75.75 0 01-1.15.63l-3-2a.75.75 0 01-.35-.63v-3.25L3.22 5.78A.75.75 0 013 5.25z" 
+          clip-rule="evenodd" />
+  </svg>
+</button>
+
 
   <div id="filterMenu" 
-       class="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50">
-    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="ALL">ALL</button>
-    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="SUMMER">SUMMER</button>
-    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="WEDDING">WEDDING</button>
-    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="SPRING">SPRING</button>
-    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="QUEEN">QUEEN</button>
-    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="SPICY">SPICY</button>
-    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="CUTE">CUTE</button>
-    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="MERMAID">MERMAID</button>
-    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="OTHER">OTHER</button>
+       class="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50"
+       style="font-family: 'Tangerine', cursive; font-size: 1.4rem;">
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="ALL">All</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="SUMMER">Summer</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="WEDDING">Wedding</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="SPRING">Spring</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="QUEEN">Queen</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="SPICY">Spicy</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="CUTE">Cute</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="MERMAID">Mermaid</button>
+    <button class="block w-full text-left px-4 py-2 hover:bg-gray-100" data-category="OTHER">Other</button>
   </div>
 </div>
+
+
 
 </div>
 
@@ -311,10 +327,10 @@ document.addEventListener("click", (event) => {
 // Handle filter option click
 filterMenu.querySelectorAll("button").forEach(btn => {
   btn.addEventListener("click", () => {
-    const category = btn.getAttribute("data-category").toUpperCase();
+    const category = btn.getAttribute("data-category");
 
     // Update label + save filter
-    filterLabel.textContent = category;
+    filterLabel.textContent = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
     currentSubFilter = category;
 
     // Render
