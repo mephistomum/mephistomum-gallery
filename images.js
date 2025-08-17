@@ -149,7 +149,6 @@ const imageList = [
   { filename: "XAVIER6.PNG", categories: ["OTHER","CUTE","WEDDING"], twitterLink: "https://x.com/mephistomum/status/1905143930280357895" },
   { filename: "XAVIER7.jpg", categories: ["CUTE","OTHER"], twitterLink: "https://x.com/mephistomum/status/1945277972778238092" },
   { filename: "XAVIER8_UNIV8.jpg", categories: ["SPRING","CUTE","WEDDING"], twitterLink: "https://x.com/mephistomum/status/1945655814469062761" },
-  { filename: "XAVIER9.jpg", categories: ["QUEEN","CUTE"], twitterLink: "https://x.com/mephistomum/status/1947229931705934246" },
   { filename: "XAVIER10.jpg", categories: ["QUEEN","WEDDING"], twitterLink: "https://x.com/fayelspearl/status/1936670339037323757" },
   { filename: "XAVIER11.jpg", categories: ["OTHER","WEDDING"], twitterLink: "https://x.com/fayelspearl/status/1936670339037323757" },
   { filename: "XAVIER12.jpg", categories: ["OTHER"], twitterLink: "https://x.com/mephistomum/status/1948721927020826969" },
