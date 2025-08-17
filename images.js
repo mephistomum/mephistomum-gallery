@@ -320,7 +320,7 @@ function renderGallery(filter = "ALL", subFilter = "ALL") {
         twitterLink
           ? `<a href="${twitterLink}" target="_blank" rel="noopener" 
                 class="mt-2 mx-auto mb-4 text-center bg-[#a27c67] text-white px-4 py-1 rounded-full w-31 hover:bg-[#8d6d57] transition text-sm">
-                View on X
+                View Post
              </a>`
           : ""
       }
