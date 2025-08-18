@@ -315,17 +315,18 @@ function renderGallery(filter = "ALL", subFilter = "ALL") {
                loading="lazy" 
                onerror="this.style.display='none'" />
         </a>
-          ${
+ ${
   image.label === "FREE" 
-    ? `<span class="absolute top-2 left-2 bg-white text-[#a27c67] 
-         text-[0.6rem] sm:text-xs md:text-sm font-bold 
-         px-1.5 sm:px-2 py-0.5 sm:py-1 
-         rounded-full flex items-center gap-1 
+    ? `<span class="absolute top-1 left-1 bg-white text-[#a27c67] 
+         text-[0.4rem] sm:text-[0.5rem] md:text-[0.6rem] font-bold 
+         px-0.5 sm:px-1 py-[1px] 
+         rounded-full flex items-center gap-0.5 
          shadow border border-[#a27c67]">
-         ✔ F2P FRIENDLY
+         ✔ F2P
        </span>` 
     : ""
 }
+
 
       </div>
       ${
