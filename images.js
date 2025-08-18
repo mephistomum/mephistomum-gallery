@@ -317,11 +317,16 @@ function renderGallery(filter = "ALL", subFilter = "ALL") {
         </a>
           ${
   image.label === "FREE" 
-    ? `<span class="absolute top-2 left-2 bg-white text-[#a27c67] text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow border border-[#a27c67]">
+    ? `<span class="absolute top-2 left-2 bg-white text-[#a27c67] 
+         text-[0.6rem] sm:text-xs md:text-sm font-bold 
+         px-1.5 sm:px-2 py-0.5 sm:py-1 
+         rounded-full flex items-center gap-1 
+         shadow border border-[#a27c67]">
          ✔ F2P FRIENDLY
        </span>` 
     : ""
 }
+
       </div>
       ${
         twitterLink
