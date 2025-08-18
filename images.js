@@ -265,8 +265,8 @@ const imageList = [
   { filename: "CANVA3.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
   { filename: "CANVA4.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
   { filename: "CANVA5.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
-  { filename: "CANVA6.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true }
-
+  { filename: "CANVA6.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
+  { filename: "CANVA7.png", twitterLink: "https://x.com/mephistomum/status/1918312897207517229", hiddenInAll: true }
 ];
 
 let currentMainFilter = "ALL";  // <-- add this at the top
