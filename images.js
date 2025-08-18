@@ -10,7 +10,7 @@ const filterOptionsMap = {
   XAVIER: ["ALL", "SUMMER", "WEDDING", "SPRING", "QUEEN", "SPICY", "CUTE",  "OTHER"], 
   UNIV: [], 
   COUPLE: [], 
-  "5-STAR": [], 
+  CANVA: [], 
 };
 
 
@@ -260,12 +260,12 @@ const imageList = [
   { filename: "SYLUS68.PNG", categories: ["SPICY"], twitterLink: "https://x.com/mephistomum/status/1899409406351270328" },
   { filename: "SYLUS69.PNG", categories: ["OTHER"], twitterLink: "https://x.com/mephistomum/status/1904879983233032293" },
   
-  { filename: "5-STAR1.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
-  { filename: "5-STAR2.jpg", twitterLink: "https://x.com/mephistomum/status/1934831272028938720", hiddenInAll: true },
-  { filename: "5-STAR3.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
-  { filename: "5-STAR4.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
-  { filename: "5-STAR5.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
-  { filename: "5-STAR6.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true }
+  { filename: "CANVA1.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
+  { filename: "CANVA2.jpg", twitterLink: "https://x.com/mephistomum/status/1934831272028938720", hiddenInAll: true },
+  { filename: "CANVA3.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
+  { filename: "CANVA4.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
+  { filename: "CANVA5.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
+  { filename: "CANVA6.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true }
 
 ];
 
@@ -297,7 +297,7 @@ function renderGallery(filter = "ALL", subFilter = "ALL") {
     const altText = image.filename.replace(/\.[^/.]+$/, "").replace(/_/g, " ");
     const twitterLink = image.twitterLink;
 
-    const isFiveStar = image.filename.toUpperCase().startsWith("5-STAR");
+    const isFiveStar = image.filename.toUpperCase().startsWith("CANVA");
     const isTall = image.isTall;
 
     const article = document.createElement("article");
