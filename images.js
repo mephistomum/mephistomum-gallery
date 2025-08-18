@@ -323,7 +323,7 @@ function renderGallery(filter = "ALL", subFilter = "ALL") {
          px-0.5 sm:px-1 py-[1px] 
          rounded-full flex items-center gap-0.5 
          shadow border border-[#a27c67]">
-         ✔ F2P
+         F2P
        </span>` 
     : ""
 }
