@@ -88,6 +88,7 @@ const imageList = [
   { filename: "SYLUS96.jpg", categories: ["SPICY","SUMMER"], twitterLink: "https://x.com/mephistomum/status/1956891822653124959" },
   { filename: "SYLUS94.jpg", categories: ["SUMMER"],twitterLink: "https://x.com/mephistomum/status/1956181646199210185" },
   { filename: "SYLUS95.jpg", categories: ["SUMMER"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1956709441501278302" },
+  { filename: "SYLUS97.jpg", categories: ["SUMMER"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1956709441501278302" },
   { filename: "SYLUS90.PNG", categories: ["OTHER", "WEDDING"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1955443180679426553" },
   { filename: "SYLUS89.PNG", categories: ["OTHER", "WEDDING"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1955443180679426553" },
   { filename: "SYLUS3.jpg", categories: ["WEDDING"],  twitterLink: "https://x.com/mephistomum/status/1941271218528845911" },
