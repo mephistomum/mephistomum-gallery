@@ -40,6 +40,7 @@ const imageList = [
   { filename: "MC67.PNG", categories: ["SPRING"], twitterLink: "https://x.com/mephistomum/status/1955404738167705650" },
   { filename: "MC68.PNG", categories: ["SUMMER"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1955547526205149502" },
   { filename: "MC69.PNG", categories: ["SPRING"], twitterLink: "https://x.com/mephistomum/status/1955789108724556097" },
+  { filename: "MC78.jpg", categories: ["SPRING"], label: "FREE", twitterLink: "https://x.com/mephistomum/status/1955789108724556097" },
   { filename: "MC70.PNG", categories: ["SUMMER"] , label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1955794032787116107" },
   { filename: "MC71.PNG", categories: ["SUMMER"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1955802719933067767" },
   { filename: "MC72.jpg", categories: ["SUMMER"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1956264684908371995" },
