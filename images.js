@@ -100,7 +100,7 @@ const imageList = [
   { filename: "SYLUS100.jpg", categories: ["SUMMER"] , twitterLink: "https://x.com/mephistomum/status/1957592585654137193" },
   { filename: "SYLUS103.jpg", categories: ["SUMMER","SPICY"] , twitterLink: "https://x.com/mephistomum/status/1957592585654137193" },
   { filename: "SYLUS104.jpg", categories: ["SUMMER","SPICY"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1957592585654137193" },
-  { filename: "SYLUS105.jpg", categories: ["SUMMER"], label: "FREE" , twitterLink: "" , isTall : true},
+  { filename: "SYLUS105.jpg", categories: ["SUMMER"], label: "FREE" , twitterLink: "https://x.com/Mephistosfriend" , isTall : true},
   { filename: "SYLUS101.jpg", categories: ["SUMMER","SPICY"], twitterLink: "https://x.com/mephistomum/status/1957752279630819691" },
   { filename: "SYLUS102.jpg", categories: ["SUMMER","SPICY"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1957752279630819691" },
   { filename: "SYLUS90.PNG", categories: ["OTHER", "WEDDING"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1955443180679426553" },
