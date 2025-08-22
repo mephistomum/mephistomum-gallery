@@ -20,6 +20,7 @@ const imageList = [
   { filename: "SYLUS2.jpg", categories: ["WEDDING"], label: "FREE" ,twitterLink: "https://x.com/mephistomum/status/1941132096090898597" },
   { filename: "SYLUS5.jpg", categories: ["WEDDING"], label: "FREE" ,twitterLink: "https://x.com/mephistomum/status/1942600224117252199" },
   { filename: "SYLUS6_UNIV1.jpg", categories: ["CUTE","WEDDING"], label: "FREE" ,twitterLink: "https://x.com/mephistomum/status/1944549367274438752" },
+  { filename: "SYLUS105.jpg", categories: ["SUMMER","SPICY"],twitterLink: "https://x.com/mephistomum/status/1958693888274964490" },
   { filename: "SYLUS78.jpg", categories: ["WEDDING"], label: "FREE" ,twitterLink: "https://x.com/mephistomum/status/1946742382411878756" },
   { filename: "SYLUS77.jpg", categories: ["WEDDING"], label: "FREE" ,twitterLink: "https://x.com/mephistomum/status/1946508489859473424" },
   { filename: "SYLUS76.jpg", categories: ["WEDDING"], label: "FREE" ,twitterLink: "https://x.com/mephistomum/status/1946025270324142487" },
