@@ -151,7 +151,7 @@
 
   <nav class="flex flex-col w-full space-y-3 text-sm font-semibold tracking-wide">
     <button class="bg-[#d4bfaf] text-[#7e624a] rounded-full w-full py-2" disabled onclick="changeLogo('logo.png')">ALL</button>
-    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="goToRandomPicker()">RANDOM PICK</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="goToRandomPicker()">RANDOM</button>
     <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo6.png')">MC</button>
     <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo.png')">SYLUS</button>
     <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo3.png')">ZAYNE</button>
@@ -453,7 +453,7 @@ document.querySelectorAll("nav a, nav button, nav li, nav div").forEach(navItem 
     e.preventDefault();
 
     // 🟢 Skip reset if RANDOM PICKER button was clicked
-    if (navItem.textContent.trim() === "RANDOM PICK") {
+    if (navItem.textContent.trim() === "RANDOM") {
       return;
     }
 
