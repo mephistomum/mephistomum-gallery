@@ -247,7 +247,24 @@
 
 <!-- RANDOM PICKER SECTION -->
 <section id="randomPickerGame" class="hidden flex flex-col items-center justify-center h-screen px-4">
-  <div id="shuffleArea"></div>
+  
+  <!-- Picker Filter -->
+  <div class="mb-4 flex flex-wrap gap-2 justify-center w-full">
+    <button class="picker-btn px-4 py-2 sm:px-2 sm:py-1 rounded bg-[#4b372a] text-white text-base sm:text-xs" onclick="setPickerFilter('ALL', this)">ALL</button>
+    <button class="picker-btn px-4 py-2 sm:px-2 sm:py-1 rounded bg-[#4b372a] text-white text-base sm:text-xs" onclick="setPickerFilter('MC', this)">MC</button>
+    <button class="picker-btn px-4 py-2 sm:px-2 sm:py-1 rounded bg-[#4b372a] text-white text-base sm:text-xs" onclick="setPickerFilter('SYLUS', this)">SYLUS</button>
+    <button class="picker-btn px-4 py-2 sm:px-2 sm:py-1 rounded bg-[#4b372a] text-white text-base sm:text-xs" onclick="setPickerFilter('ZAYNE', this)">ZAYNE</button>
+    <button class="picker-btn px-4 py-2 sm:px-2 sm:py-1 rounded bg-[#4b372a] text-white text-base sm:text-xs" onclick="setPickerFilter('CALEB', this)">CALEB</button>
+    <button class="picker-btn px-4 py-2 sm:px-2 sm:py-1 rounded bg-[#4b372a] text-white text-base sm:text-xs" onclick="setPickerFilter('RAFAYEL', this)">RAFAYEL</button>
+    <button class="picker-btn px-4 py-2 sm:px-2 sm:py-1 rounded bg-[#4b372a] text-white text-base sm:text-xs" onclick="setPickerFilter('XAVIER', this)">XAVIER</button>
+  </div>
+
+  <!-- Shuffle Area with Default Message -->
+  <div id="shuffleArea" class="flex items-center justify-center w-full h-64  rounded-lg">
+    <p id="placeholderMessage" class="text-gray-500 text-lg italic text-center">
+      👆 Please click one of the above buttons to start the shuffle
+    </p>
+  </div>
 
   <!-- Reshuffle Button -->
   <button id="reshuffleBtn" 
@@ -475,69 +492,7 @@ document.querySelectorAll("nav a, nav button, nav li, nav div").forEach(navItem 
 
 
 </script>
-<script>
-// Preload images into memory
-const preloadedImages = {};
-function preloadImages() {
-  let preloadList = imageList.filter(img => !img.filename.startsWith("CANVA"));
-  preloadList.forEach(img => {
-    const image = new Image();
-    image.src = "assets/images/" + img.filename;
-    preloadedImages[img.filename] = image;
-  });
-}
-preloadImages();
-
-function goToRandomPicker() {
-  document.getElementById("gallery").classList.add("hidden");
-  document.getElementById("randomPickerGame").classList.remove("hidden");
-
-  hidePicked(); // reset overlay
-  startShuffle();
-}
-
-function startShuffle() {
-  const shuffleArea = document.getElementById("shuffleArea");
-  shuffleArea.innerHTML = ""; // clear old content
-
-  const imgEl = document.createElement("img");
-  imgEl.className = "w-full h-full object-contain rounded-xl shadow-lg";
-  shuffleArea.appendChild(imgEl);
-
-  // Take random cards
-  let cards = imageList.filter(img => !img.filename.startsWith("CANVA"));
-  cards = cards.sort(() => 0.5 - Math.random()).slice(0, 20); // grab 20 candidates
-
-  let i = 0;
-  const shuffleInterval = setInterval(() => {
-    const current = cards[i % cards.length];
-    imgEl.src = preloadedImages[current.filename].src; // ✅ use preloaded
-    i++;
-  }, 100); // change every 100ms
-
-  // Stop shuffle after 2 seconds, show picked
-  setTimeout(() => {
-    clearInterval(shuffleInterval);
-
-    const picked = cards[Math.floor(Math.random() * cards.length)];
-    document.getElementById("pickedImage").src = preloadedImages[picked.filename].src; // ✅ cached
-    document.getElementById("pickedCard").classList.remove("hidden");
-  }, 2000);
-}
-
-// Close overlay
-document.getElementById("closePicked").addEventListener("click", hidePicked);
-
-function hidePicked() {
-  document.getElementById("pickedCard").classList.add("hidden");
-}
-
-// Reshuffle button
-document.getElementById("reshuffleBtn").addEventListener("click", () => {
-  hidePicked();   // hide overlay if open
-  startShuffle(); // go through shuffle again
-});
-</script>
+<script src="picker.js"></script>
 
 
 </body>
