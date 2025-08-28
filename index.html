@@ -20,6 +20,9 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
   }
+  #pickedCard {
+  z-index: 100000  !important; /* higher than popupNotice */
+}
 
   #sidebar {
     z-index: 20 !important;
@@ -47,6 +50,67 @@
   margin-right: 0; /* Removes gap after the last name */
 }
 
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: rotate(0deg);
+  transition: transform 0.5s ease, top 0.5s ease, left 0.5s ease;
+  cursor: pointer;
+}
+
+/* Close button style (relative to picked image) */
+#closePicked {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+#closePicked:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Responsive shuffle area */
+#shuffleArea {
+  position: relative;
+  width: 85vw;          /* takes most of screen width */
+  height: auto;
+  aspect-ratio: 3/4;    /* keeps card shape */
+  max-width: 320px;     /* limit on bigger screens */
+  max-height: 420px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#shuffleArea img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* On small phones, shrink a bit more */
+@media (max-width: 480px) {
+  #shuffleArea {
+    width: 75vw;
+    max-width: 260px;
+  }
+}
 
 </style>
 </head>
@@ -87,6 +151,7 @@
 
   <nav class="flex flex-col w-full space-y-3 text-sm font-semibold tracking-wide">
     <button class="bg-[#d4bfaf] text-[#7e624a] rounded-full w-full py-2" disabled onclick="changeLogo('logo.png')">ALL</button>
+    <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="goToRandomPicker()">RANDOM PICK</button>
     <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo6.png')">MC</button>
     <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo.png')">SYLUS</button>
     <button class="hover:bg-[#bb987c] rounded-full w-full py-2" onclick="changeLogo('logo3.png')">ZAYNE</button>
@@ -180,6 +245,19 @@
     <!-- JS will populate this -->
   </section>
 
+<!-- RANDOM PICKER SECTION -->
+<section id="randomPickerGame" class="hidden flex flex-col items-center justify-center h-screen px-4">
+  <div id="shuffleArea"></div>
+
+  <!-- Reshuffle Button -->
+  <button id="reshuffleBtn" 
+          class="mt-4 px-6 py-2 bg-[#4b372a] text-white rounded-lg shadow-md hover:bg-[#6d4b3b] transition">
+    🔄 Reshuffle
+  </button>
+</section>
+
+
+
 
 
 
@@ -242,6 +320,22 @@
     </ul>
 
     <p class="mt-4 text-sm text-gray-600 italic text-center">I love you and thank you! Feel free to visit this page anytime &lt;3</p>
+  </div>
+</div>
+
+<!-- Overlay Picked Image -->
+<div id="pickedCard" 
+     class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+  <div class="relative inline-block">
+    <!-- Picked Image -->
+    <img id="pickedImage" src="" alt="Picked Card" 
+         class="max-h-[80vh] max-w-[90vw] object-contain rounded-xl shadow-2xl">
+
+    <!-- Close Button -->
+      <div id="closePicked"
+         class="absolute top-2 right-2 bg-black/60 text-white w-8 h-8 flex items-center justify-center rounded-full cursor-pointer text-lg font-bold hover:bg-black/80">
+      ✖
+    </div>
   </div>
 </div>
 
@@ -353,23 +447,84 @@ filterMenu.querySelectorAll("button").forEach(btn => {
 // ✅ Select all nav items (links, buttons, spans inside nav)
 document.querySelectorAll("nav a, nav button, nav li, nav div").forEach(navItem => {
   navItem.addEventListener("click", (e) => {
-        if (navItem.tagName === "A") {
-      // ✅ Let Yearbook link work normally
+    if (navItem.tagName === "A") {
+      return; // allow normal links
+    }
+    e.preventDefault();
+
+    // 🟢 Skip reset if RANDOM PICKER button was clicked
+    if (navItem.textContent.trim() === "RANDOM PICK") {
       return;
     }
-    // If it's an SPA, keep preventDefault. If real links, remove it.
-    e.preventDefault();  
 
     // Reset label and filter state
-    filterLabel.textContent = "Filter"; 
-    currentSubFilter = "ALL";  
+    filterLabel.textContent = "Filter";
+    currentSubFilter = "ALL";
 
-    // Re-render with reset
+    // Re-render gallery
     renderGallery(currentMainFilter, currentSubFilter);
+
+    // 🔮 Reset to gallery view
+    document.getElementById("randomPickerGame").classList.add("hidden");
+    document.getElementById("gallery").classList.remove("hidden");
+
+    filterMenu.classList.add("hidden"); // close dropdown
   });
 });
 
 
+
+</script>
+<script>
+function goToRandomPicker() {
+  document.getElementById("gallery").classList.add("hidden");
+  document.getElementById("randomPickerGame").classList.remove("hidden");
+
+  hidePicked(); // reset overlay
+  startShuffle();
+}
+
+function startShuffle() {
+  const shuffleArea = document.getElementById("shuffleArea");
+  shuffleArea.innerHTML = ""; // clear old content
+
+  const imgEl = document.createElement("img");
+  imgEl.className = "w-full h-full object-contain rounded-xl shadow-lg";
+  shuffleArea.appendChild(imgEl);
+
+  // Take random cards
+  let cards = imageList
+  .filter(img => !img.filename.startsWith("CANVA")); // 🚫 skip CANVA
+  cards = cards.sort(() => 0.5 - Math.random()).slice(0, 20); // grab 20 candidates
+
+  let i = 0;
+  const shuffleInterval = setInterval(() => {
+    imgEl.src = "assets/images/" + cards[i % cards.length].filename;
+    i++;
+  }, 100); // change every 100ms
+
+  // Stop shuffle after 2 seconds, show picked
+  setTimeout(() => {
+    clearInterval(shuffleInterval);
+
+    const picked = cards[Math.floor(Math.random() * cards.length)];
+    document.getElementById("pickedImage").src = "assets/images/" + picked.filename;
+    document.getElementById("pickedCard").classList.remove("hidden");
+  }, 2000);
+}
+
+// Close overlay
+document.getElementById("closePicked").addEventListener("click", hidePicked);
+
+function hidePicked() {
+  document.getElementById("pickedCard").classList.add("hidden");
+}
+
+// Reshuffle button
+document.getElementById("reshuffleBtn").addEventListener("click", () => {
+  hidePicked();   // hide overlay if open
+  startShuffle(); // go through shuffle again
+});
 </script>
 
 
