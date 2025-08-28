@@ -476,6 +476,18 @@ document.querySelectorAll("nav a, nav button, nav li, nav div").forEach(navItem 
 
 </script>
 <script>
+// Preload images into memory
+const preloadedImages = {};
+function preloadImages() {
+  let preloadList = imageList.filter(img => !img.filename.startsWith("CANVA"));
+  preloadList.forEach(img => {
+    const image = new Image();
+    image.src = "assets/images/" + img.filename;
+    preloadedImages[img.filename] = image;
+  });
+}
+preloadImages();
+
 function goToRandomPicker() {
   document.getElementById("gallery").classList.add("hidden");
   document.getElementById("randomPickerGame").classList.remove("hidden");
@@ -493,13 +505,13 @@ function startShuffle() {
   shuffleArea.appendChild(imgEl);
 
   // Take random cards
-  let cards = imageList
-  .filter(img => !img.filename.startsWith("CANVA")); // 🚫 skip CANVA
+  let cards = imageList.filter(img => !img.filename.startsWith("CANVA"));
   cards = cards.sort(() => 0.5 - Math.random()).slice(0, 20); // grab 20 candidates
 
   let i = 0;
   const shuffleInterval = setInterval(() => {
-    imgEl.src = "assets/images/" + cards[i % cards.length].filename;
+    const current = cards[i % cards.length];
+    imgEl.src = preloadedImages[current.filename].src; // ✅ use preloaded
     i++;
   }, 100); // change every 100ms
 
@@ -508,7 +520,7 @@ function startShuffle() {
     clearInterval(shuffleInterval);
 
     const picked = cards[Math.floor(Math.random() * cards.length)];
-    document.getElementById("pickedImage").src = "assets/images/" + picked.filename;
+    document.getElementById("pickedImage").src = preloadedImages[picked.filename].src; // ✅ cached
     document.getElementById("pickedCard").classList.remove("hidden");
   }, 2000);
 }
