@@ -1,10 +1,10 @@
 
 // Define which filters are allowed per main filter
 const filterOptionsMap = {
-  ALL: ["ALL", "SUMMER", "WEDDING", "SPRING", "QUEEN", "SPICY", "CUTE", "MERMAID", "SCHOOL", "OTHER"],
+  ALL: ["ALL", "SUMMER", "WEDDING", "SPRING", "QUEEN","GOODESS", "SPICY", "CUTE", "MERMAID", "SCHOOL", "OTHER"],
   MC: ["ALL", "SUMMER", "WEDDING", "SPRING", "QUEEN", "SPICY", "CUTE", "MERMAID", "SCHOOL", "OTHER"], // only show these when MC is selected
   SYLUS: ["ALL", "SUMMER", "WEDDING", "SPRING", "SPICY", "CUTE", "SCHOOL",  "OTHER"], 
-  ZAYNE: ["ALL", "SUMMER", "WEDDING", "SPRING", "SPICY", "CUTE", "SCHOOL",  "OTHER"], 
+  ZAYNE: ["ALL", "SUMMER", "WEDDING", "SPRING","GOODESS", "SPICY", "CUTE", "SCHOOL",  "OTHER"], 
   CALEB: ["ALL", "SUMMER", "WEDDING", "SPRING",  "SPICY", "CUTE", "SCHOOL",  "OTHER"], 
   RAFAYEL: ["ALL", "SUMMER", "WEDDING", "SPRING",  "SPICY", "CUTE", "MERMAID", "SCHOOL", "OTHER"], 
   XAVIER: ["ALL", "SUMMER", "WEDDING", "SPRING", "QUEEN", "SPICY", "CUTE", "SCHOOL",  "OTHER"], 
@@ -52,6 +52,17 @@ const imageList = [
                       { filename: "SYLUS114.jpg", categories: ["CUTE","SCHOOL"] ,twitterLink: "https://x.com/mephistomum/status/1965652179370520943" },
                       { filename: "SYLUS115.jpg", categories: ["SPICY"] ,twitterLink: "https://x.com/mephistomum/status/1966276591144853997" },
                       { filename: "SYLUS116.jpg", categories: ["CUTE","SPRING"] ,twitterLink: "https://x.com/mephistomum/status/1967219696564101441" },
+
+                      { filename: "SYLUS117.jpg", categories: ["SPICY"] ,twitterLink: "https://x.com/mephistomum/status/1968871621344518414" },
+                      { filename: "SYLUS118.jpg", categories: ["SPICY"] ,twitterLink: "https://x.com/mephistomum/status/1968615544614953076" },                      
+                      { filename: "SYLUS119.jpg", categories: ["CUTE","WEDDING"] ,twitterLink: "https://x.com/mephistomum/status/1968406994815172875" },
+                      { filename: "SYLUS120.jpg", categories: ["SPICY"] ,twitterLink: "https://x.com/mephistomum/status/1972589263884784079" },
+                      { filename: "MC98.jpg", categories: ["GOODESS",] ,twitterLink: "https://x.com/mephistomum/status/1971362949127442817" },                      
+                      { filename: "MC99.jpg", categories: ["CUTE","GOODESS",] ,twitterLink: "https://x.com/mephistomum/status/1971386298616381510" },
+                      { filename: "MC100.jpg", categories: ["CUTE","GOODESS",] ,twitterLink: "https://x.com/mephistomum/status/1972563998811025432" },
+                       { filename: "MC101.jpg", categories: ["CUTE","SPRING"] ,twitterLink: "https://x.com/mephistomum/status/1973312221456556306" },
+                      { filename: "ZAYNE18.jpg", categories: ["CUTE", "GODDESS"] ,twitterLink: "https://x.com/mephistomum/status/1971360707510943935" },
+
   { filename: "MC85.png", categories: ["WEDDING"], label: "FREE" , twitterLink: "https://x.com/stayyna_/status/1944982992532742293" },
   { filename: "MC86.png", categories: ["WEDDING"], label: "FREE" , twitterLink: "https://x.com/stayyna_/status/1944982992532742293" },
   { filename: "MC64.jpg",  categories: ["OTHER"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1952633731627336060" },
@@ -228,6 +239,8 @@ const imageList = [
   { filename: "COUPLE4M.jpg", twitterLink: "https://x.com/mephistomum/status/1959399742703911090" },
     { filename: "COUPLE5F.jpg", twitterLink: "https://x.com/mephistomum/status/1961246892119273927" },
   { filename: "COUPLE5M.jpg", twitterLink: "https://x.com/mephistomum/status/1961246892119273927" },
+   { filename: "COUPLE6F.jpg", twitterLink: "https://x.com/mephistomum/status/1968669348769181877" },
+  { filename: "COUPLE6M.jpg", twitterLink: "https://x.com/mephistomum/status/1968669348769181877" },
   { filename: "MC13.jpg", categories: ["SPRING"], twitterLink: "https://x.com/mephistomum/status/1909934399489192221" },
   { filename: "MC14.jpg", categories: ["CUTE","OTHER"], twitterLink: "https://x.com/mephistomum/status/1910847621205275081" },
   { filename: "MC15.jpg", categories: ["OTHER"], twitterLink: "https://x.com/mephistomum/status/1914352106557022719" },
