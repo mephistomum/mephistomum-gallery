@@ -250,6 +250,8 @@ const imageList = [
   { filename: "COUPLE5M.jpg", twitterLink: "https://x.com/mephistomum/status/1961246892119273927" },
    { filename: "COUPLE6F.jpg", twitterLink: "https://x.com/mephistomum/status/1968669348769181877" },
   { filename: "COUPLE6M.jpg", twitterLink: "https://x.com/mephistomum/status/1968669348769181877" },
+     { filename: "COUPLE7F.PNG", twitterLink: "https://x.com/mephistomum/status/1977309541663641743" },
+  { filename: "COUPLE7M.PNG", twitterLink: "https://x.com/mephistomum/status/1977309541663641743" },
   { filename: "MC13.jpg", categories: ["SPRING"], twitterLink: "https://x.com/mephistomum/status/1909934399489192221" },
   { filename: "MC14.jpg", categories: ["CUTE","OTHER"], twitterLink: "https://x.com/mephistomum/status/1910847621205275081" },
   { filename: "MC15.jpg", categories: ["OTHER"], twitterLink: "https://x.com/mephistomum/status/1914352106557022719" },
