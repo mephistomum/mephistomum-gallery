@@ -48,6 +48,14 @@ const imageList = [
                   { filename: "MC95.jpg", categories: ["QUEEN"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1967570991514820983" },
                     { filename: "MC96.jpg", categories: ["WEDDING"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1967898730721579068" },
                       { filename: "MC97.jpg", categories: ["WEDDING"], label: "FREE" , twitterLink: "https://x.com/mephistomum/status/1967996345291288835" },
+
+                      { filename: "SYLUS121.jpg", categories: ["SPICY","CUTE"] ,twitterLink: "https://x.com/mephistomum/status/1976665787617390958" },
+                      { filename: "SYLUS122.jpg", categories: ["CUTE"] ,twitterLink: "https://x.com/mephistomum/status/1976665787617390958" },
+                      { filename: "SYLUS123.jpg", categories: ["CUTE"] ,twitterLink: "https://x.com/mephistomum/status/1976665787617390958" },
+                      { filename: "SYLUS124.jpg", categories: ["OTHER"] ,twitterLink: "https://x.com/mephistomum/status/1965207759319965889" },
+                      { filename: "SYLUS125.jpg", categories: ["CUTE"] ,twitterLink: "https://x.com/mephistomum/status/1976882783487508841" },
+                      { filename: "SYLUS126.jpg", categories: ["CUTE"] ,twitterLink: "https://x.com/mephistomum/status/1909193670357913820" },
+
                       { filename: "SYLUS113.jpg", categories: ["SUMMER","CUTE"] ,twitterLink: "https://x.com/mephistomum/status/1965207759319965889" },
                       { filename: "SYLUS114.jpg", categories: ["CUTE","SCHOOL"] ,twitterLink: "https://x.com/mephistomum/status/1965652179370520943" },
                       { filename: "SYLUS115.jpg", categories: ["SPICY"] ,twitterLink: "https://x.com/mephistomum/status/1966276591144853997" },
@@ -188,6 +196,7 @@ const imageList = [
   { filename: "XAVIER1_UNIV1.jpg", categories: ["CUTE","WEDDING"], twitterLink: "https://x.com/mephistomum/status/1944549367274438752" },
   { filename: "XAVIER2_UNIV2.jpg", categories: ["CUTE","WEDDING"], twitterLink: "https://x.com/mephistomum/status/1943630155249009008" },
   { filename: "XAVIER9.jpg", categories: ["CUTE","OTHER"], twitterLink: "https://x.com/mephistomum/status/1947229931705934246" },
+   { filename: "XAVIER25.jpg", categories: ["CUTE"], twitterLink: "https://x.com/mephistomum/status/1976814719236555232" },
     { filename: "ZAYNE15.jpg", categories: ["CUTE"], twitterLink: "https://x.com/mephistomum/status/1961349231274291585" },
       { filename: "ZAYNE16.jpg", categories: ["CUTE"], twitterLink: "https://x.com/mephistomum/status/1962732208835485760" },
       { filename: "ZAYNE17.jpg", categories: ["CUTE"], twitterLink: "https://x.com/mephistomum/status/1963886540414964033" },
