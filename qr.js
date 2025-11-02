@@ -20,6 +20,9 @@ window.imageList = [
     { filename: "SYLUS128.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1984386251303370905" },
     { filename: "MC102.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1983529906345844971" },
     { filename: "MC103.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1984381891206873586" },
+    { filename: "MC104.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1984591214788915643" },
+    { filename: "SYLUS130.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1984823462054314426" },
+    
   { filename: "SYLUS1.jpg", categories: ["WEDDING"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1940802154585116787" },
   { filename: "SYLUS2.jpg", categories: ["WEDDING"], label: "FREE" ,twitterLink: "https://x.com/mephistomum/status/1941132096090898597" },
   { filename: "SYLUS5.jpg", categories: ["WEDDING"], label: "FREE" ,twitterLink: "https://x.com/mephistomum/status/1942600224117252199" },
@@ -348,5 +351,6 @@ window.imageList = [
   { filename: "CANVA4.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
   { filename: "CANVA5.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
   { filename: "CANVA6.jpg", twitterLink: "https://x.com/mephistomum/status/1896494068936626253", hiddenInAll: true },
-  { filename: "CANVA7.png", twitterLink: "https://x.com/mephistomum/status/1918312897207517229", hiddenInAll: true }
+  { filename: "CANVA7.png", twitterLink: "https://x.com/mephistomum/status/1918312897207517229", hiddenInAll: true },
+  { filename: "CANVA8.png", twitterLink: "https://x.com/mephistomum/status/1984823462054314426", hiddenInAll: true }
 ];
