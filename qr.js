@@ -1,9 +1,9 @@
 
 // Define which filters are allowed per main filter
 window.filterOptionsMap = {
-  ALL: ["ALL", "SUMMER", "WEDDING","IDOL", "SPRING", "QUEEN","GOODESS", "SPICY", "CUTE", "MERMAID", "SCHOOL", "OTHER"],
-  MC: ["ALL", "SUMMER", "WEDDING", "SPRING", "QUEEN", "SPICY", "CUTE", "MERMAID", "SCHOOL","IDOL", "OTHER"], // only show these when MC is selected
-  SYLUS: ["ALL", "SUMMER", "WEDDING", "SPRING", "SPICY", "CUTE", "SCHOOL","IDOL",  "OTHER"], 
+  ALL: ["ALL", "FIEND","SUMMER", "WEDDING","IDOL", "SPRING", "QUEEN","GOODESS", "SPICY", "CUTE", "MERMAID", "SCHOOL", "OTHER"],
+  MC: ["ALL","FIEND","SUMMER", "WEDDING", "SPRING", "QUEEN", "SPICY", "CUTE", "MERMAID", "SCHOOL","IDOL", "OTHER"], // only show these when MC is selected
+  SYLUS: ["ALL","FIEND", "SUMMER", "WEDDING", "SPRING", "SPICY", "CUTE", "SCHOOL","IDOL",  "OTHER"], 
   ZAYNE: ["ALL", "SUMMER", "WEDDING", "SPRING","GOODESS", "SPICY", "CUTE", "SCHOOL","IDOL",  "OTHER"], 
   CALEB: ["ALL", "SUMMER", "WEDDING", "SPRING",  "SPICY", "CUTE", "SCHOOL","IDOL",  "OTHER"], 
   RAFAYEL: ["ALL", "SUMMER", "WEDDING", "SPRING",  "SPICY", "CUTE", "MERMAID", "SCHOOL","IDOL", "OTHER"], 
@@ -16,6 +16,22 @@ window.filterOptionsMap = {
 
 
 window.imageList = [
+  { filename: "MC109.jpg", categories: ["OTHER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1998171070202008002?s=20" },
+  { filename: "MC108.jpg", categories: ["OTHER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1997809220172034209?s=20" },
+  { filename: "MC107.jpg", categories: ["OTHER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1996975382625722812?s=20" },
+  { filename: "SYLUS137.jpg", categories: ["FIEND"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1996975382625722812?s=20" },
+  { filename: "SYLUS136.jpg", categories: ["WEDDING"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1990816037923598337?s=20" },
+  { filename: "SYLUS138.jpg", categories: ["FIEND"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1996975382625722812?s=20" },
+  { filename: "SYLUS139.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1988751868185718879?s=20" },
+  { filename: "SYLUS134.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1987447090818265205?s=20" },
+  { filename: "SYLUS135.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1991635000392053075?s=20" },
+  { filename: "SYLUS132.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1988242483583799361?s=20" },
+  { filename: "SYLUS133.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1988242483583799361?s=20" },
+{ filename: "XAVIER26.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1987457677514129484?s=20" },
+{ filename: "MC105.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1990790648790987095?s=20" },
+{ filename: "MC106.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1987431281672732742?s=20" },
+  { filename: "SYLUS131.jpg", categories: ["IDOL","CUTE"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1985905996108357802?s=20" },
+
     { filename: "SYLUS127.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1984392535952015748" },
     { filename: "SYLUS128.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1984386251303370905" },
     { filename: "MC102.jpg", categories: ["IDOL"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1983529906345844971" },
