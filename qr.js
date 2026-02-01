@@ -16,6 +16,22 @@ window.filterOptionsMap = {
 
 
 window.imageList = [
+
+  { filename: "SYLUS147.jpg", categories: ["WEDDING","CUTE"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2004897328550084697?s=20" },
+{ filename: "MC114.jpg", categories: ["WEDDING"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2017372981828485366?s=20" },
+  { filename: "MC1113.jpg", categories: ["WEDDING"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2015935752937554263?s=20" },
+  { filename: "MC111.jpg", categories: ["QUEEN"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2006640584086401168?s=20" },
+  { filename: "MC112.jpg", categories: ["QUEEN"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2011031525417238632?s=20" },
+  { filename: "MC110.jpg", categories: ["OTHER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1999266672348414440?s=20" },
+  { filename: "SYLUS144.jpg", categories: ["WEDDING"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2015320986925883810?s=20" },
+  { filename: "SYLUS145.jpg", categories: ["OTHER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2006640584086401168?s=20" },
+  { filename: "SYLUS146.jpg", categories: ["OTHER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2006640584086401168?s=20" },
+  { filename: "SYLUS141.jpg", categories: ["WEDDING","CUTE"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2001422378207998354?s=20" },
+  { filename: "SYLUS140.jpg", categories: ["WEDDING"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1999108143503360011?s=20" },
+  { filename: "SYLUS142.jpg", categories: ["CUTE","SUMMER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2015339032604193248?s=20" },
+  { filename: "SYLUS143.jpg", categories: ["WEDDING"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/2015344421798326475?s=20" },
+ 
+
   { filename: "MC109.jpg", categories: ["OTHER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1998171070202008002?s=20" },
   { filename: "MC108.jpg", categories: ["OTHER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1997809220172034209?s=20" },
   { filename: "MC107.jpg", categories: ["OTHER"], label: "FREE" ,  twitterLink: "https://x.com/mephistomum/status/1996975382625722812?s=20" },
@@ -279,6 +295,8 @@ window.imageList = [
   { filename: "COUPLE6M.jpg", twitterLink: "https://x.com/mephistomum/status/1968669348769181877" },
      { filename: "COUPLE7F.PNG", twitterLink: "https://x.com/mephistomum/status/1977309541663641743" },
   { filename: "COUPLE7M.PNG", twitterLink: "https://x.com/mephistomum/status/1977309541663641743" },
+       { filename: "COUPLE8F.PNG", twitterLink: "https://x.com/mephistomum/status/2015368059457028224?s=20" },
+  { filename: "COUPLE8M.PNG", twitterLink: "https://x.com/mephistomum/status/2015368059457028224?s=20" },
   { filename: "MC13.jpg", categories: ["SPRING"], twitterLink: "https://x.com/mephistomum/status/1909934399489192221" },
   { filename: "MC14.jpg", categories: ["CUTE","OTHER"], twitterLink: "https://x.com/mephistomum/status/1910847621205275081" },
   { filename: "MC15.jpg", categories: ["OTHER"], twitterLink: "https://x.com/mephistomum/status/1914352106557022719" },
